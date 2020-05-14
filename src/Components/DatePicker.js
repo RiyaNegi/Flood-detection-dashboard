@@ -15,8 +15,8 @@ class DatePicker extends Component {
   };
 
   onChange = date => {
-    console.log("river: ", this.state.river);
-    if (!this.state.data[date]) {
+    let x = date.getDate();
+    if (!data[x]) {
       return;
     }
     this.setState({ date: date, data: data[date.getDate()] });
