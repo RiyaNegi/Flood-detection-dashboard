@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import DatePicker from "./Components/DatePicker";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className="">
+        <Navbar
+          bg="primary"
+          variant="dark"
+          style={{ justifyContent: "center", fontWeight: 600 }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Navbar.Brand href="#home">
+            Early Flood Detection and Avoidance
+          </Navbar.Brand>
+        </Navbar>
+      </div>
+      <div className="App">
+        <div>
+          <DatePicker />
+        </div>
+      </div>
+    </>
   );
 }
 
