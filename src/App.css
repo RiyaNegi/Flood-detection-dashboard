@@ -4,11 +4,61 @@
   flex-direction: row;
 }
 
-.calendar {
-  margin: 50px;
-}
-
 .map-view img {
   max-width: none;
   max-height: none;
+}
+
+.Navbar {
+  background-color: #001c3a;
+}
+
+.container {
+  padding: 10px;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 4px;
+  background-color: white;
+}
+
+.cox-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+.cover-container {
+  min-width: 60%;
+  padding: 0 20px;
+}
+
+.cop-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.jvectormap-legend-cnt-v {
+  margin-top: 340px;
+  margin-right: 40px;
+}
+
+.jvectormap-legend-tick {
+  text-align: left;
+  padding-left: 2px;
+}
+
+.recharts-wrapper {
+  margin: 0px;
+}
+
+.river {
+  display: flex;
+  text-align: left;
+  padding: 30px;
+  font-size: 20px;
+  font-weight: 800px;
+}
+
+.river-container {
+  margin-left: 20px;
 }

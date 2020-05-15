@@ -4,6 +4,8 @@ import React, { Component } from "react";
 import data from "../data/data.json";
 import FloodMap from "./FloodMap";
 import River from "./River";
+import PropTypes from "prop-types";
+import FloodChart from "./FloodChart";
 
 const today = new Date();
 
@@ -11,7 +13,7 @@ class DatePicker extends Component {
   state = {
     date: today,
     data: data[today.getDate()],
-    river: []
+    river: ["Ganga", "Godavari", "Narmada"]
   };
 
   onChange = date => {
@@ -38,22 +40,32 @@ class DatePicker extends Component {
 
   render() {
     return (
-      <div>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div className="calendar">
-              <Calendar onChange={this.onChange} value={this.state.date} />
+      <div className="cop-container">
+        <div className="cover-container">
+          <div className="cox-container">
+            <div className="container">
+              <Calendar
+                className={["calendar"]}
+                onChange={this.onChange}
+                value={this.state.date}
+              />
             </div>
-            <div>
+            <div className="river container river-container">
               <River
                 onRadioChange={this.onRadioChange}
                 river={this.state.river}
               />
             </div>
           </div>
-          <div>
-            <FloodMap data={this.state.data} river={this.state.river} />
+          <div key={this.state.data} className="container">
+            <label style={{ fontWeight: 800 }}>
+              Flood level Prediction of states in India (in %)
+            </label>
+            <FloodChart chartData={this.state.data} />
           </div>
+        </div>
+        <div className="container">
+          <FloodMap data={this.state.data} river={this.state.river} />
         </div>
       </div>
     );

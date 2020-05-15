@@ -1,17 +1,19 @@
 import React from "react";
 
 const Rivers = props => {
-  let river = {};
+  let river = props.river;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div>
       <div>
         <input
           type="checkbox"
           name="river"
           value="Ganga"
           onChange={props.onRadioChange}
+          checked={river.filter(val => val.includes("Ganga")).length}
         />
-        Ganga
+        <label style={{ fontWeight: 600 }}>Ganga </label>
       </div>
 
       <div>
@@ -20,8 +22,9 @@ const Rivers = props => {
           name="river"
           value="Godavari"
           onChange={props.onRadioChange}
+          checked={river.filter(val => val.includes("Godavari")).length}
         />
-        Godavari
+        <label style={{ fontWeight: 600 }}>Godavari</label>
       </div>
 
       <div>
@@ -30,8 +33,9 @@ const Rivers = props => {
           name="river"
           value="Narmada"
           onChange={props.onRadioChange}
+          checked={river.filter(val => val.includes("Narmada")).length}
         />
-        Narmada
+        <label style={{ fontWeight: 600 }}>Narmada</label>
       </div>
     </div>
   );
